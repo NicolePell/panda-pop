@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseUrl: 'https://www.googleapis.com/youtube/v3',
+  baseURL: 'https://www.googleapis.com/youtube/v3',
   params: {
     part: 'snippet',
     maxResults: 5,
-    key: process.env.PANDAPOP_YOUTUBE_API_KEY
+    key: process.env.REACT_APP_PANDAPOP_YOUTUBE_KEY
   }
 })
