@@ -2,6 +2,7 @@ import React from 'react'
 
 import youtube from '../apis/youtube'
 import SearchBar from './SearchBar'
+import VideoDetail from './VideoDetail'
 import VideoList from './VideoList'
 
 class PandaPop extends React.Component {
@@ -17,8 +18,8 @@ class PandaPop extends React.Component {
     this.setState({ videos: response.data.items })
   }
 
-  onVideoSelect = (video) => {
-    console.log('From the App!', video)
+  onVideoSelect = video => {
+    this.setState({ selectedVideo: video })
   }
 
   render() {
@@ -26,6 +27,7 @@ class PandaPop extends React.Component {
       <div className="ui container">
         <h1>PandaPop</h1>
         <SearchBar onFormSubmit={this.onTermSubmit} />
+        <VideoDetail video={this.state.selectedVideo} />
         <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
       </div>
     ) 
