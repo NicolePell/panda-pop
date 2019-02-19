@@ -8,6 +8,10 @@ import VideoList from './VideoList'
 class PandaPop extends React.Component {
   state = { videos: [], selectedVideo: null }
 
+  componentDidMount() {
+    this.onTermSubmit('moana')
+  }
+
   onTermSubmit = async term => {
     const response = await youtube.get('/search', {
       params: {
