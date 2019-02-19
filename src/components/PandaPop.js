@@ -2,6 +2,7 @@ import React from 'react'
 
 import youtube from '../apis/youtube'
 import SearchBar from './SearchBar'
+import VideoList from './VideoList'
 
 class PandaPop extends React.Component {
   state = { videos: [] }
@@ -21,7 +22,7 @@ class PandaPop extends React.Component {
       <div className="ui container">
         <h1>PandaPop</h1>
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        Videos: {this.state.videos.length}
+        <VideoList videos={this.state.videos} />
       </div>
     ) 
   }
